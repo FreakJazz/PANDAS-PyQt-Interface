@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>293</width>
-    <height>645</height>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -76,12 +76,12 @@
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>91</width>
+       <width>221</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>__________________</string>
+      <string>                                                                                </string>
      </property>
     </widget>
    </widget>
@@ -131,12 +131,12 @@
       <rect>
        <x>10</x>
        <y>70</y>
-       <width>139</width>
-       <height>13</height>
+       <width>241</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>Your File have been Charged</string>
+      <string>There are not files charger</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
@@ -167,9 +167,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>390</y>
+      <y>380</y>
       <width>271</width>
-      <height>51</height>
+      <height>181</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -189,6 +189,16 @@
      </property>
      <property name="text">
       <string>Files Expored:  </string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>251</width>
+       <height>121</height>
+      </rect>
      </property>
     </widget>
    </widget>

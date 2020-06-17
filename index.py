@@ -26,40 +26,47 @@ class Application(QMainWindow):
     #self.lenguajes.removeItem(0)
     
     def getfile(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
+        self.options = QFileDialog.Options()
+        #self.options |= QFileDialog.DontUseNativeDialog
         #fileName, _ = QFileDialog.getOpenFileName(self,"Open File", "","All Files (*);;CSV Files (*.csv)", options=options)
-        fileNames, _ = QFileDialog.getOpenFileNames(self,"QFileDialog.getOpenFileNames()", "","All Files (*);;CSV Files (*.csv)", options=options)
+        self.fileNames, _ = QFileDialog.getOpenFileNames(self,"Open File", "","CSV Files (*.csv);;All Files (*)", options=self.options)
         #fileNames, _ = QFileDialog.getSaveFileName(self,"Open File","","All Files (*);;CSV Files (*.csv)", options=options)
-        if fileNames:
-            print(fileNames)
-        
-        #inputPath = sys.argv[1]
-        #data = pd.read_csv(inputPath, parse_data = ['Time'])            # File csv
-        #item = self.list_options.currentText()
-        self.label_file.setText("Your File have been Charged: " + fileNames)
-        #self.listView.setText(item,self.count)
-        self.listWidget.addItem(fileNames)
-        self.count +=1
-        print(self.count)
+        if self.fileNames:
+            print(self.fileNames)
+            self.lenght = len(self.fileNames)-1
+            print(self.lenght)
+            while self.lenght >= 0:
+                print(self.fileNames[self.lenght])
+                self.label_file.setText("Your Files have been Charged: " + str(len(self.fileNames)))
+                self.listWidget.addItem(self.fileNames[self.lenght])
+                #for i in (self.fileNames[self.lenght].reverse()):
+                   # if (i == '.' or i == '/'):
+                    #    self.count = i
+                    #    break
+                #print(self.count)
+                self.lenght -=1
+            
 
     def processfile(self):
-        data = pd.read_csv('Files\input.csv')            # File csv
-        data_output = pd.read_csv('Files\output.csv')
-        print(data)
-        print(data_output)
-        id1 = data['id']           # Get data about ID
-        name = data['Name']           # Get data about ID
-        address = data['Full_Address']
-        pd.merge(data_output, data, how = 'left', on = name)
+        if self.fileNames:
+            self.lenght = len(self.fileNames)-1
+            print(self.lenght)
+            while self.lenght >= 0:
+                data = pd.read_csv('Files\input.csv')            # File csv
+                print(self.fileNames[self.lenght])
+                data = pd.read_csv(self.fileNames[self.lenght])            # File csv
+                name = data['Name']           # Get data about Name
+                State = data['State']           # Get data about State
+                address = data['Phone']         # Get data about Phone
+                data.to_csv(self.fileNames[self.lenght]+"output.csv",columns = ['Name','State', 'Phone'])
+                self.lenght -=1
+                self.listWidget_2.addItem(self.fileNames[self.lenght]+"output.csv")
+
         for i  in range(101):
             self.process_bar.setValue(i)
             self.label_process.setText("Processing...")
         self.label_process.setText("Process Finished")
         self.process_bar.setValue(0)
-        print(data_output)
-        print(data)
-        data_output.to_csv('Files\output.csv')
 
 if __name__ == "__main__": 
     app = QApplication(sys.argv)        #App Inicialization
