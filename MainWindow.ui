@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>287</width>
-    <height>585</height>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
+      <y>260</y>
       <width>271</width>
-      <height>101</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -71,6 +71,19 @@
       <string>Processing</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_process">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>__________________</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="selec_file_frame">
     <property name="geometry">
@@ -78,7 +91,7 @@
       <x>10</x>
       <y>10</y>
       <width>271</width>
-      <height>101</height>
+      <height>241</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -96,16 +109,6 @@
        <height>31</height>
       </rect>
      </property>
-     <item>
-      <property name="text">
-       <string>File1</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>File 2</string>
-      </property>
-     </item>
     </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
@@ -138,12 +141,35 @@
       <rect>
        <x>10</x>
        <y>70</y>
-       <width>251</width>
-       <height>20</height>
+       <width>139</width>
+       <height>13</height>
       </rect>
      </property>
      <property name="text">
       <string>Your File have been Charged</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Files</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>251</width>
+       <height>111</height>
+      </rect>
      </property>
     </widget>
    </widget>
@@ -151,9 +177,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>280</y>
+      <y>410</y>
       <width>271</width>
-      <height>211</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -173,16 +199,6 @@
      </property>
      <property name="text">
       <string>Files Expored:  </string>
-     </property>
-    </widget>
-    <widget class="QListWidget" name="list_new_file">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>10</y>
-       <width>171</width>
-       <height>192</height>
-      </rect>
      </property>
     </widget>
    </widget>
@@ -208,6 +224,11 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>btn_process</tabstop>
+  <tabstop>list_options</tabstop>
+  <tabstop>btn_charge</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -218,11 +239,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>172</x>
-     <y>96</y>
+     <y>91</y>
     </hint>
     <hint type="destinationlabel">
      <x>211</x>
-     <y>95</y>
+     <y>91</y>
     </hint>
    </hints>
   </connection>
