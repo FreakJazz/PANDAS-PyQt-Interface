@@ -52,7 +52,6 @@ class Application(QMainWindow):
             self.lenght = len(self.fileNames)-1
             print(self.lenght)
             while self.lenght >= 0:
-                data = pd.read_csv('Files\input.csv')            # File csv
                 print(self.fileNames[self.lenght])
                 data = pd.read_csv(self.fileNames[self.lenght])            # File csv
                 name = data['Name']           # Get data about Name
