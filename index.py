@@ -1,7 +1,7 @@
 import csv          
 import pandas as pd
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QDialog, QFileDialog
 from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
@@ -20,22 +20,26 @@ class Application(QMainWindow):
         self.setWindowTitle("SUVECI")
         self.count = 1
         #Agree new item
-        self.list_options.addItem("input.csv")
-        self.list_options.addItem("echogar.csv")
-        self.list_options.addItem("echogar1.csv")
-        self.list_options.addItem("echogar2.csv")
         self.btn_charge.clicked.connect(self.getfile)
         self.btn_process.clicked.connect(self.processfile)
     #Eliminar un item
     #self.lenguajes.removeItem(0)
     
     def getfile(self):
-        inputPath = sys.argv[1]
-        data = pd.read_csv(inputPath, parse_data = ['Time'])            # File csv
-        item = self.list_options.currentText()
-        self.label_file.setText("Your File have been Charged: " + item)
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        #fileName, _ = QFileDialog.getOpenFileName(self,"Open File", "","All Files (*);;CSV Files (*.csv)", options=options)
+        fileNames, _ = QFileDialog.getOpenFileNames(self,"QFileDialog.getOpenFileNames()", "","All Files (*);;CSV Files (*.csv)", options=options)
+        #fileNames, _ = QFileDialog.getSaveFileName(self,"Open File","","All Files (*);;CSV Files (*.csv)", options=options)
+        if fileNames:
+            print(fileNames)
+        
+        #inputPath = sys.argv[1]
+        #data = pd.read_csv(inputPath, parse_data = ['Time'])            # File csv
+        #item = self.list_options.currentText()
+        self.label_file.setText("Your File have been Charged: " + fileNames)
         #self.listView.setText(item,self.count)
-        self.listWidget.addItem(item)
+        self.listWidget.addItem(fileNames)
         self.count +=1
         print(self.count)
 
