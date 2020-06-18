@@ -48,7 +48,7 @@ PyInstaller | *pip install pyinstaller*
 ### File Generated
 
 
-![File Generated](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/final.PNG)
+![File Generated](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/final.png)
 
 [Up](#top)
 
