@@ -13,10 +13,10 @@ class Application(QMainWindow):
     #Método constructor de la clase
     def __init__(self, parent = None):
         #QMainWindow Start
-        
         QMainWindow.__init__(self,parent)
         #Charge MainWindow 
         uic.loadUi("MainWindow.ui", self)
+        #Title
         self.setWindowTitle("SUVECI")
         self.count = 1
         #Agree new item
@@ -25,6 +25,7 @@ class Application(QMainWindow):
     #Eliminar un item
     #self.lenguajes.removeItem(0)
     
+    # Function in order to charge the files
     def getfile(self):
         self.options = QFileDialog.Options()
         #self.options |= QFileDialog.DontUseNativeDialog
@@ -46,17 +47,20 @@ class Application(QMainWindow):
                 #print(self.count)
                 self.lenght -=1
             
-
+    # Function in order to create the new files
     def processfile(self):
         if self.fileNames:
             self.lenght = len(self.fileNames)-1
             print(self.lenght)
             while self.lenght >= 0:
-                print(self.fileNames[self.lenght])
+                print(self.fileNames[self.lenght])            # Show what file are created
                 data = pd.read_csv(self.fileNames[self.lenght])            # File csv
+
                 name = data['Name']           # Get data about Name
                 State = data['State']           # Get data about State
                 address = data['Phone']         # Get data about Phone
+                dfObj = pd.DataFrame(columns=['Name', 'Given Name', 'Additional Name', 'Family Name', 'Yomi Name', 'Given Name Yomi', 'Additional Name Yomi', 'Family Name Yomi', 'Name Prefix', 'Name Suffix', 'Initials', 'Nickname', 'Short Name', 'Maiden Name', 'Birthday', 'Gender', 'Location', 'Billing Information', 'Directory Server', 'Mileage', 'Occupation', 'Hobby', 'Sensitivity', 'Priority', 'Subject', 'Notes', 'Language', 'Photo', 'Group Membership', 'Phone 1 - Type', 'Phone 1 - Value', 'Address 1 - Type', 'Address 1 - Formatted', 'Address 1 - Street', 'Address 1 - City', 'Address 1 - PO Box', 'Address 1 - Region', 'Address 1 - Postal Code', 'Address 1 - Country', 'Address 1 - Extended Address', 'Organization 1 - Type', 'Organization 1 - Name', 'Organization 1 - Yomi Name', 'Organization 1 - Title', 'Organization 1 - Department', 'Organization 1 - Symbol', 'Organization 1 - Location', 'Organization 1 - Job Description'])
+                
                 data.to_csv(self.fileNames[self.lenght]+"output.csv",columns = ['Name','State', 'Phone'])
                 self.lenght -=1
                 self.listWidget_2.addItem(self.fileNames[self.lenght]+"output.csv")
