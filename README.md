@@ -39,16 +39,16 @@ PyInstaller | *pip install pyinstaller*
 
 ### Interface
 
-![Interface](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/interface.PNG)
+![Interface](https://github.com/FreakJazz/PyQt-Interface-with-PANDAS-.csv-files/blob/master/Images/interface.PNG)
 
 ### Charge files
 
-![Charge Files](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/charge.PNG)
+![Charge Files](https://github.com/FreakJazz/PyQt-Interface-with-PANDAS-.csv-files/blob/master/Images/charge.PNG)
 
 ### File Generated
 
 
-![File Generated](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/final.png)
+![File Generated](https://github.com/FreakJazz/PyQt-Interface-with-PANDAS-.csv-files/blob/master/Images/final.png)
 
 [Up](#top)
 
