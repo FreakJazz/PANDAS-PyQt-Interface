@@ -39,16 +39,16 @@ PyInstaller | *pip install pyinstaller*
 
 ### Interface
 
-![Interface](https://github.com/FreakJazz/Connection-MQTT-with-Python/blob/master/images/send_python.JPG)
+![Interface](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/interface.PNG)
 
 ### Charge files
 
-![Charge Files](https://github.com/FreakJazz/Connection-MQTT-with-Python/blob/master/images/send_python.JPG)
+![Charge Files](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/charge.PNG)
 
 ### File Generated
 
 
-![File Generated](https://github.com/FreakJazz/Connection-MQTT-with-Python/blob/master/images/topic.JPG)
+![File Generated](https://github.com/FreakJazz/Get-information-from-.csv-files-using-PyQt-and-PANDAS/blob/master/Images/final.PNG)
 
 [Up](#top)
 
