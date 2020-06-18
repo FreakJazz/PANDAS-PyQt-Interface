@@ -27,7 +27,9 @@ Numpy |  *pip install numpy*
 [Numpy Library](https://numpy.org/)
 
 PyQt5 |  *pip install pyqt5*
+
 PyQt5-tools | *pip install pyqt5-tools*
+
 PyInstaller | *pip install pyinstaller*
 
 [Numpy Library](https://pypi.org/project/PyQt5/)
