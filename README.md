@@ -1,5 +1,5 @@
 <a name="top"></a>
-# PyQt Interface with PANDAS .csv-files
+# PANDAS PyQt Interface
 
 <a name="item1"></a>
 ## Description
